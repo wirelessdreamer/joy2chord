@@ -605,7 +605,7 @@ int joy2chord::read_config(map<string,__u16>  & chordmap)
 	{
 		cerr << "Invalid entry for quickpress" << endl;
 	}else{
-		pressedflag = 0;
+		quickpress = 0;
 	}
 
 	if (verbose)
@@ -1022,7 +1022,7 @@ void joy2chord::process_events(js_event js)
 					clear++;
 				}
 			}
-			if ((clear == 0) || ((quickmode == 1) && (readytosend == 1)))
+			if ((clear == 0) || ((quickpress == 1) && (readytosend == 1)))
 			{ // if all buttons are released then send the code and clear everything
 				for (int allbuttons = 0; allbuttons < total_chorded_buttons; allbuttons++)
 				{
@@ -1195,7 +1195,7 @@ int main( int argc, char *argv[])
 
 	// these should happen in the constructor
 	myjoy.total_modes = 0;
-	myjoy.pressedflag = 0;
+	myjoy.justpressed = 0;
 	myjoy.config_file = init_config_file;
 	myjoy.axes = 0;
 	myjoy.total_simple_buttons = 0;
