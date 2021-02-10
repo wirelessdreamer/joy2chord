@@ -3,6 +3,9 @@ Joy2Chord is a userlevel input driver for chorded keyboards based off of devices
 Written by Nathanael Anderson wirelessdreamer (AT) gmail (DOT) com
 config file code by Rick Wagner wagnerr@umich.edu from http://www-personal.umich.edu/~wagnerr/ConfigFile.html
 
+To Compile: 
+install automake for your distribution, then run autogen.sh, followed by configure, and make
+
 Requirements:
 Linux uinput interface in kernel
 Linux Joystick interface in kernel
